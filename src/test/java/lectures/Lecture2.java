@@ -11,12 +11,18 @@ public class Lecture2 {
   @Test
   public void range() throws Exception {
 
+    IntStream.rangeClosed(1,10).forEach(
+        i -> System.out.println(i));
+
   }
 
   @Test
   public void rangeIteratingLists() throws Exception {
     List<Person> people = MockData.getPeople();
-
+    people.stream()
+        .skip(0)
+        .limit(10)
+        .forEach(System.out::println);
   }
 
   @Test
